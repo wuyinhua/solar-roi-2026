@@ -3,7 +3,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 st.title("Solar Panel ROI Calculator for US Homeowners 2026")
-
+# 在 app.py 里加入这段内容，增加页面文字量
+with st.expander("How this ROI is calculated (2026 Data)"):
+    st.write("""
+    Our calculator uses the latest 2026 average electricity rates and solar installation costs. 
+    Factors included:
+    - **Federal Tax Credit (ITC):** We assume the standard 30% credit is already deducted.
+    - **Degradation:** Solar panels typically lose 0.5% efficiency per year.
+    - **Maintenance:** We recommend budgeting $150/year for inverter checks.
+    """)
 st.markdown("""
 Estimate payback period and savings for solar installation.  
 *Based on 2026 average data — adjust inputs as needed.*
