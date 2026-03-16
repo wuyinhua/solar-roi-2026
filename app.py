@@ -10,13 +10,24 @@ st.set_page_config(
 import streamlit.components.v1 as components
 
 # 这是 Google 要求的验证代码
-adsense_code = """
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5400222511566152"
-     crossorigin="anonymous"></script>
-"""
+# --- 修改这里开始 ---
+import streamlit.components.v1 as components
 
-# 将代码注入网页（隐藏在后台）
-components.html(adsense_code, height=0)
+# 1. 换成 Google AdSense 的“元标记”验证代码 (Meta Tag)
+# 请去 AdSense 验证页面，确认你的 ca-pub ID 是否就是下面这个
+meta_tag = '<meta name="google-adsense-account" content="ca-pub-5400222511566152">'
+
+# 2. 尝试更直接的注入方式
+components.html(f"""
+    <script>
+        var meta = document.createElement('meta');
+        meta.name = "google-adsense-account";
+        meta.content = "ca-pub-5400222511566152";
+        parent.document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+""", height=0)
+# --- 修改这里结束 ---
+
 # 2. 模拟 AdSense 样式与 UI 美化
 st.markdown("""
     <style>
