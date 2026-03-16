@@ -128,13 +128,41 @@ elif app_mode == "Care Guides":
 
 # --- 模块 5: 隐私与联系 (合规页面) ---
 elif app_mode == "Legal & Contact":
-    st.header("Legal & Policy")
-    tab1, tab2 = st.tabs(["Privacy Policy", "Contact Us"])
+    st.header("Legal & Policy Center")
+    tab1, tab2, tab3 = st.tabs(["Privacy Policy", "Terms of Service", "Contact Us"])
+    
     with tab1:
-        st.write("**Privacy Policy:** We do not store your data. We use Google AdSense which uses cookies.")
-        st.write("**Medical Disclaimer:** This tool does not provide veterinary advice.")
+        st.subheader("Privacy Policy")
+        st.write(f"""
+        **Effective Date:** March 16, 2026
+        
+        At **Senior Pet Hub LA**, accessible from https://laseniorpet.com, one of our main priorities is the privacy of our visitors.
+        
+        **1. Log Files**
+        We follow a standard procedure of using log files. These files log visitors when they visit websites. 
+        
+        **2. Google DoubleClick DART Cookie**
+        Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.
+        
+        **3. Our Advertising Partners**
+        Some of advertisers on our site may use cookies and web beacons. Our advertising partners include:
+        * **Google AdSense** (You may consult their Privacy Policy at: https://policies.google.com/technologies/ads)
+        
+        **4. Third Party Privacy Policies**
+        Our Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information.
+        """)
+
     with tab2:
-        st.write("Questions? Email: contact@your-senior-pet-hub.com")
+        st.subheader("Terms of Service & Disclaimer")
+        st.warning("**Medical Disclaimer:** The information on this website is for educational purposes only and does not constitute professional veterinary advice, diagnosis, or treatment. Always seek the advice of your veterinarian.")
+        st.write("""
+        By using this tool, you agree that the scores and data provided are estimates to assist in Quality of Life discussions and should not be used as the sole basis for end-of-life decisions.
+        """)
+        
+    with tab3:
+        st.subheader("Contact Our Team")
+        st.write("We are located in Los Angeles, California.")
+        st.write("📩 **Email:** w63812643@gmail.com")
 
 # --- 底部页脚 (AdSense 必备链接) ---
 st.divider()
