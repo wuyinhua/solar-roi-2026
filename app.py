@@ -7,7 +7,16 @@ st.set_page_config(
     page_icon="🐾",
     layout="wide"
 )
+import streamlit.components.v1 as components
 
+# 这是 Google 要求的验证代码
+adsense_code = """
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5400222511566152"
+     crossorigin="anonymous"></script>
+"""
+
+# 将代码注入网页（隐藏在后台）
+components.html(adsense_code, height=0)
 # 2. 模拟 AdSense 样式与 UI 美化
 st.markdown("""
     <style>
