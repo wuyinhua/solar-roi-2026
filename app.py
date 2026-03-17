@@ -9,13 +9,20 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- AdSense Verification (Global Header) ---
+# --- Verification Headers (AdSense + Search Console) ---
 components.html(f"""
     <script>
-        var meta = document.createElement('meta');
-        meta.name = "google-adsense-account";
-        meta.content = "ca-pub-5400322511960150";
-        parent.document.getElementsByTagName('head')[0].appendChild(meta);
+        // AdSense
+        var adMeta = document.createElement('meta');
+        adMeta.name = "google-adsense-account";
+        adMeta.content = "ca-pub-5400322511960150";
+        parent.document.getElementsByTagName('head')[0].appendChild(adMeta);
+
+        // Google Search Console (把下面这一段换成你刚才复制的那个)
+        var scMeta = document.createElement('meta');
+        scMeta.name = "google-site-verification";
+        scMeta.content = "<meta name="google-site-verification" content="XaMamVqx7TlaKL5YIaTHoF03tMVwKv3ASmPExNx5Uu8" />"; 
+        parent.document.getElementsByTagName('head')[0].appendChild(scMeta);
     </script>
 """, height=0)
 
